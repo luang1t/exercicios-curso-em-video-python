@@ -16,31 +16,31 @@ def recolher_numero():
             numero = int(input("Digite um número para saber sua conversão: "))
             return numero
         except ValueError:
+            clear()
             print("Digite apenas numeros.")
+            
         
-
-numero = recolher_numero()
-clear()
-
 while True:
-    clear()
     exibir_menu()
     try:
-        seletor = int(input("Digite aqui: "))
-        if seletor == 1:
-            print(bin(numero))
-            break
-        elif seletor == 2:
-            print(hex(numero))
-            break
-        elif seletor == 3:
-            print == (oct(numero))
-            break
-        else:
-            clear()
-            print("Código inválido, digite algo válido no contexto do menu.") 
+            seletor = int(input("Digite aqui: "))
+            if seletor == 1:
+                numero = recolher_numero()
+                clear()
+                print(f"{numero} em binario {bin(numero)}")
+            elif seletor == 2:
+                numero = recolher_numero()
+                clear()
+                print(f"{numero} em hexadecial {hex(numero)}")
+            elif seletor == 3:
+                numero = recolher_numero()
+                clear()
+                print == (f"{numero} em octadecial {oct(numero)}")
+            else:
+                clear()
+                print("Código inválido, digite algo válido no contexto do menu.") 
     except ValueError:
-        clear()
-        print("Digite algo válido no contexto do menu.")
+            clear()
+            print("Digite algo válido no contexto do menu.")
 
             
