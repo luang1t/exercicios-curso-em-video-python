@@ -25,7 +25,7 @@ clear()
 print(notas)
 if media < 5:
     print(f"Reprovado com média: {media}")
-elif 5 > media >= 6.9:
+elif 5 > media <= 6.9:
     print(f"Aluno foi para a recuperação com média: {media}")
 else:
     print(f"Aluno foi aprovado com média: {media}")    
