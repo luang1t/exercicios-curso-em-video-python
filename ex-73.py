@@ -1,30 +1,26 @@
-brasileirao_2025 = (
+times_brasileirao_2025 = (
     "Flamengo",
+    "Cruzeiro SAF",
     "Palmeiras",
-    "Cruzeiro",
+    "Mirassol",
     "Bahia",
     "Botafogo",
-    "Mirassol",
     "São Paulo",
-    "Fluminense",
     "Red Bull Bragantino",
-    "Ceará",
-    "Atlético Mineiro",
-    "Internacional",
-    "Grêmio",
     "Corinthians",
-    "Santos",
-    "Vasco da Gama",
+    "Fluminense",
+    "Ceará",
+    "Internacional",
+    "Atlético Mineiro SAF",
+    "Grêmio",
+    "Vasco da Gama SAF",
+    "Santos FC",
     "Vitória",
     "Juventude",
-    "Fortaleza",
+    "Fortaleza EC SAF",
     "Sport"
 )
-print(brasileirao_2025[0:5])
-print(brasileirao_2025[-4:])
-print(sorted(brasileirao_2025))
-
-for i in range(len(brasileirao_2025)):
-    if brasileirao_2025[i] == 'Corinthians':
-        print(f"O {brasileirao_2025[i]} está em {i+1}º da tabela!")
-        break
+print(times_brasileirao_2025[0:5])
+print(times_brasileirao_2025[-4:])
+print(sorted(times_brasileirao_2025))
+print(f"O Corinthians está na posição {times_brasileirao_2025.index('Corinthians')+1}º")

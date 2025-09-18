@@ -1,10 +1,9 @@
 produtos = (
-    "Arroz", 25.50,
-    "Feijão", 12.30,
-    "Macarrão", 8.90,
-    "Leite", 5.20,
-    "Ovos", 14.00
+    'Arroz',2.5,
+'Feijao',4.5,
+'Tapioca',8.99
+
 )
 
 for i in range(0,len(produtos),2):
-    print(f"{produtos[i]}----------------{produtos[i+1]}")
+    print(f"{produtos[i]:.<30}R$:{produtos[i+1]}")

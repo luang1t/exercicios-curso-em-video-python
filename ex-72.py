@@ -1,11 +1,14 @@
-tupla = ('zero','um','dois','tres','quatro','cinco','seis','sete','oito','nove','dez')
+numeros = (
+    "zero", "um", "dois", "três", "quatro", 
+    "cinco", "seis", "sete", "oito", "nove", 
+    "dez", "onze", "doze", "treze", "quatorze", 
+    "quinze", "dezesseis", "dezessete", "dezoito", "dezenove", "vinte"
+)
 
-
-numero = int(input("Digite um numero de 0 a 10: "))
+user_input = int(input("Um numero de 0 a 20: "))
 while True:
-    if 0 <= numero <=10:
-        if numero in range(len(tupla)):
-            print(tupla[numero])
-            break           
+    if user_input <= 20 and user_input >= 0:
+        print(numeros[user_input])
+        break
     else:
-        numero = int(input("Tente novamente!\nDigite um numero de 0 a 10: "))        
+        user_input = int(input("Um numero de 0 a 20: "))
