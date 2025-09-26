@@ -27,3 +27,4 @@ for pessoa in range(len(pessoas)):
         print(f'{pessoas[pessoa][0]} está acima do peso com {pessoas[pessoa][1]}kg')
     else:
         print(f'{pessoas[pessoa][0]} está abaixo do peso com {pessoas[pessoa][1]}kg')  
+        
