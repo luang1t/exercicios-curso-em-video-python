@@ -4,52 +4,49 @@
 # C) Uma lista com as mulheres 
 # D) Uma lista de pessoas com idade acima da média
 
-soma_idade = cont_m = cont_h = cont_bug = 0
-pessoas_veias = list()
-mulheres = list()
 pessoas = list()
-template = dict()
+pessoa = dict()
+soma = media = 0
 
 while True:
+    pessoa.clear()
+    pessoa['nome'] = str(input('Digite o seu nome: '))
 
-    template['nome'] = input("Digite seu nome ou 0 para sair: ")
-    if template['nome'] == '0':
+    while True:
+        pessoa['sexo'] = str(input('Sexo: [M/F]')).upper().strip()[0]
+        if pessoa['sexo'] in 'MF':
+            break
+        print('Digite apenas F para feminino e M para masculino. Tente novamente')
+    pessoa['idade'] = int(input("Digite a sua idade: "))
+    soma+=pessoa['idade']
+    pessoas.append(pessoa.copy())
+
+    while True:
+        valida = str(input('Deseja continuar cadastrando? [S/N] ')).upper().strip()[0]
+        if valida in 'SN':
+            break
+        print("Erro! Responda apenas 'S' ou 'N'.")
+
+    if valida == 'N':
         break
-    
-    template['sexo'] = input("Digite 'H' para Homem ou 'M' para Mulher: ").strip().upper()[0]
-    if template['sexo'] == 'H':
-        template['idade'] = int(input("Digite sua idade: "))
-        pessoas.append(template.copy())
-        soma_idade+=template['idade']
-        cont_h+=1
-    elif template['sexo'] == 'M':
-        template['idade'] = int(input("Digite sua idade: "))
-        mulheres.append(template.copy())
-        pessoas.append(template.copy())
-        soma_idade+=template['idade']
-        cont_m+=1
-    else:
-        print("Tente novamente. Digite algo relacionado com o que se pede!")
-        cont_bug+=1
-        continue
-    
-if pessoas:
-    media = soma_idade/len(pessoas)
-else:
-    media = 0    
 
-for pessoa in pessoas:
-    for k,v in pessoa.items():
-        print(f"{k}-{v}")
+media = soma/len(pessoas)
 
-for pessoa in pessoas:
-        if pessoa['idade'] > media:
-            pessoas_veias.append(pessoa.copy())
+print(f"-="*30)
+print(f"Um total de {len(pessoas)} pessoas foram cadastradas.")
+print(f"A média de idade é de {media:.0f} anos")
 
-print(f"O total de {len(pessoas)} pessoas foram cadastradas.")
-print(f"A média de idade das pessoas cadastradas é de {media:.2f} anos.")
-print(f"Lista de mulheres cadastradas:\n{[m['nome'] for m in mulheres]}")
+print(f"As mulheres cadastradas foram:")
+for i in pessoas:
+    if i['sexo'] == 'F':
+        print(f"{i['nome']} ")
+print()
 
-print(f"As pessoas mais velhas encontradas: ")
-for v in pessoas_veias:
-    print(f"{v["nome"]} - ({v["idade"]} anos)")
+print(f"Pessoas acima da média de idade: ")
+for i in pessoas:
+    if i['idade'] >= media:
+        print("    ")
+        for k,v in i.items():
+            print(f"{k} = {v}; ")
+        print()
+print("Finished")       
