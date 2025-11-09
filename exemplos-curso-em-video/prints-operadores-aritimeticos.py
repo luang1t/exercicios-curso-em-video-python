@@ -1,0 +1,6 @@
+nome = input("Qual seu nome: ")
+print("="*20)
+print(f"Seu nome é {nome :>20}!")
+print(f"Seu nome é {nome:<20}!")
+print("="*20)
+print(f"{nome:=^20}")
