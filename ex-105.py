@@ -11,13 +11,12 @@ qtd_notas = int(input("Digite quantas notas vc quer gerar: "))
 
 notas_cadastradas = list()
 
+
 for _ in range(qtd_notas):
     notas_cadastradas.append(randint(0,10))
 
 
-
-def notas_descricao(*notas_alunos):
-
+def notas_descricao(notas_alunos=list()):
     quantida_notas = len(notas_alunos)
     maior_nota = max(notas_alunos)
     menor_nota = min(notas_alunos)
@@ -25,6 +24,6 @@ def notas_descricao(*notas_alunos):
 
     return {'quantida_notas':quantida_notas,'maior':maior_nota,'menor':menor_nota,'media':media_turma}
 
-descriacao = notas_descricao(*notas_cadastradas)
+descriacao = notas_descricao(notas_cadastradas)
 
-print(descriacao, notas_cadastradas)
+print(f'{descriacao}\n{notas_cadastradas}')
