@@ -4,7 +4,10 @@ from moeda import *
 
 valor_user = float(input("Digite um valor R$:"))
 
-print(f"R$: {valor_user} aumentado em 10% é R$: {aumentar(valor_user,10)}")
-print(f"R$: {valor_user} diminuido em 10% é R$: {diminuir(valor_user,10)}")
-print(f"R$: {valor_user} dobrado R$: {dobro(valor_user)}")
-print(f"R$: {valor_user} pela metade fica R$: {metade(valor_user)}")
+
+print(f"""
+{conversor(valor_user)} acrescentado em 10% é  {conversor(aumentar(valor_user,10))}
+{conversor(valor_user)} diminuindo em 10% é {conversor(diminuir(valor_user,10))}
+{conversor(valor_user)} dobrado fica {conversor(dobro(valor_user))}
+{conversor(valor_user)} pela metado fica {conversor(metade(valor_user))}
+""")

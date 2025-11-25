@@ -13,3 +13,7 @@ def dobro(preco):
 def metade(preco):
     valor = preco/2
     return valor
+
+def conversor(preco,moeda="R$: "):
+    valor = preco
+    return f"{moeda}{valor:8.2f}".replace('.',',')
